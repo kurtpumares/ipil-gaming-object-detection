@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import imutils
 
 prototext_path = 'models/MobileNetSSD_deploy.prototxt.txt'
 model_path = 'models/MobileNetSSD_deploy.caffemodel'
@@ -29,9 +30,9 @@ class ObjectDetect:
             ret, frame = video_capture.read()
             frame = cv2.flip(frame, 1)
             frame = np.array(frame)
-
+            frame = imutils.resize(frame, width=400)
             """
-            pass img to object detector here
+            pass frame to object detector here
             """
             # grab the frame dimensions and convert it to a blob
             (h, w) = frame.shape[:2]
