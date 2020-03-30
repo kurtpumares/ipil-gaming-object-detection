@@ -1,25 +1,4 @@
 
-"""
-TODO
-
--> argparse
--> how to return image with bounding boxes
--> option to save image?
--> get help? haha nope
--> i've seen other codes with function for creating bounding box
-    -> do you want to do that as well?
--> oh noes you still haven't done any documentation at all,
-    are you gonna be alright? hahaha
--> redesign main function
-
-Notes:
-
-w and h of x,y,w,h of mtcnn and haar have different definition,
-    -> do you want to standardize them as well?
-
-"""
-
-
 import pandas as pd
 from keras.models import load_model
 from keras.preprocessing.image import img_to_array
@@ -418,23 +397,3 @@ if __name__ == '__main__':
 
     recognizer = RecogFaces()
     recognizer.capture_video(video=video)
-
-    #recognizer.process_image('./vids/test/thumb1.jpg', 'mtcnn', 1, 1, 1, 1, 1, './vids/results/sample.jpg')
-    # recognizer.detect_faces(input_dir='./vids/test/', output_dir='./vids/results/')
-
-    #
-    # path = 'vids/test'
-    # frame_count = 0
-    # process_count = 0
-    # skip = 15
-    # # pool = mp.Pool(processes=(mp.cpu_count()))
-    # start = time.time()
-    # for img_path in os.listdir(path):
-    #     if frame_count % skip == 0:
-    #         img = cv2.imread(os.path.join(path,img_path))
-    #         recognizer.capture_image(img, img_path[:-4])
-    #         process_count += 1
-    #     frame_count += 1
-    #     print(f"frame {frame_count}, {process_count/(time.time()-start):.2f} fps, {frame_count/(time.time()-start):.2f}")
-    # recognizer.logs.to_csv('unilab_logs.csv', index=False)
-    # print(f"Processed {process_count} of {frame_count} frames of in {(time.time()-start):.2f} seconds ({skip})")
