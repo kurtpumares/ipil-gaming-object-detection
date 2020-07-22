@@ -1,1 +1,1 @@
-# ipil-gaming-object-detection
+# Object Detection
